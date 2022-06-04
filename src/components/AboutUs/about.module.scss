@@ -1,0 +1,40 @@
+.aboutContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 0;
+
+  img {
+    height: 200px;
+  }
+}
+
+.aboutContent {
+  p {
+    font-size: .8rem;
+    font-weight: 300;
+    margin: .5rem 0;
+    line-height: 1.57rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    h3 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      line-height: 1.4rem;
+      font-size: .9rem;
+    }
+
+  }
+}

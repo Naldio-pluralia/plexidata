@@ -1,0 +1,111 @@
+.registerContainer {
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+
+    :not(first-child) {
+      margin-top: .3rem;
+    }
+
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: .7rem .6rem;
+    border: none;
+    background: #f1f1f1;
+    border: 1px solid var(--blue-700);
+    outline: none;
+    color: var(--blue-700);
+
+    &::placeholder {
+      font-size: .8rem;
+      color: #2f2e41;
+    }
+  }
+
+  label {
+    font-size: .8rem;
+    color: var(--blue-700);
+  }
+}
+
+.term {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+
+
+}
+
+.termBox {
+  display: flex;
+  flex-direction: column;
+
+  label,
+  span {
+    padding-left: .3rem;
+    color: #000;
+    font-size: .6rem;
+  }
+}
+
+.checkGroup {
+  display: flex;
+
+  display: flex;
+  font-size: .8rem;
+  align-items: center;
+  width: 100%;
+
+  span {
+    padding: 0.7rem 0.6rem;
+    border: none;
+    background: #f1f1f1;
+    border: 1px solid var(--blue-700);
+    border: 2px solid #f1f1f1;
+    outline: none;
+    color: var(--blue-700);
+    flex: 1;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+
+    &:active {
+      border: 2px solid var(--blue-700);
+      background-color: var(--blue-700);
+      color: #FFF;
+    }
+  }
+}
+
+.checkboxActive {
+  border: 2px solid var(--blue-700) !important;
+  background-color: var(--blue-700) !important;
+  color: #FFF !important;
+}
+
+.buttons {
+  margin-left: auto;
+  padding-bottom: 1rem;
+
+  button {
+    padding: .7rem .9rem;
+    border: none;
+    background: var(--blue-900);
+    color: #FFF;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(.9);
+    }
+  }
+}
