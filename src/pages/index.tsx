@@ -8,7 +8,6 @@ import { Slide } from '../components/Slide'
 import Modal from 'react-modal'
 import { useModal } from '../hooks/useModal'
 import { ContactUs } from '../components/ContactUs'
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css';

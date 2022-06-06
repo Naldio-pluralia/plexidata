@@ -42,12 +42,18 @@
 }
 
 .slide1 {
-  background: #FFF;
-  padding: .8rem;
+  position: relative;
 
   img {
-   height: 180px;
+    height: 180px;
+    padding: .8rem;
+    background: #FFF;
+
   }
+
+  iframe {
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -60,9 +66,11 @@
 
   .slideContent {
     text-align: center;
+
     h2 {
       line-height: 2rem;
     }
+
     p {
       line-height: 1.5rem;
       padding: 0 1.7rem;

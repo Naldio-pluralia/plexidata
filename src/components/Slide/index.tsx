@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/a11y';
 
 import styles from './slide.module.scss'
+import ReactPlayer from "react-player";
 
 
 
@@ -33,7 +34,15 @@ export function Slide() {
               <p>Os seus dados em segurança</p>
             </div>
             <div className={styles.slide1}>
-              <img src="/assets/maintenance.svg" alt="Video Plexidata" />
+                <iframe
+                  src="https://player.vimeo.com/video/717473408?h=72356bcd64&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture" 
+                  allowFullScreen 
+                
+                  title="PLEXIDATA_2022.mp4">
+                </iframe>
+              <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
           </div>
         </SwiperSlide>
@@ -64,7 +73,7 @@ export function Slide() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className={styles.wrapperContainer}>
+          <div className={styles.wrapperContainer}>
             <div className={styles.slideContent}>
               <h2>
                 Compliance

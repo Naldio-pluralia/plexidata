@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { setDoc, doc, collection, getDoc } from 'firebase/firestore'
 import styles from './register.module.scss'
 import { db } from '../../services/firebase';
@@ -16,7 +16,7 @@ interface CheckboxAreas {
 }
 
 export function Register({ close }: RegisterProps) {
-
+  const recaptchaRef = useRef(null)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -29,6 +29,11 @@ export function Register({ close }: RegisterProps) {
     certification: false
   });
   const [agree, setAgree] = useState(false);
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(true), 1500);
+  }, [])
 
   function handleCheckboxes(type: string, value: boolean) {
     setCheckboxes({ ...checkboxes, [type]: !value })
@@ -37,7 +42,11 @@ export function Register({ close }: RegisterProps) {
 
   async function handleRegistration(event: FormEvent) {
     event.preventDefault();
+    const captchaToken = recaptchaRef.current
 
+    console.log(captchaToken)
+
+    return
 
 
     if (!name || !email || !phoneNumber || !company || !charge) {
@@ -58,7 +67,7 @@ export function Register({ close }: RegisterProps) {
 
     try {
 
-      const {training, consulting, certification} = checkboxes
+      const { training, consulting, certification } = checkboxes
 
       await setDoc(docRef, {
         name,
@@ -149,25 +158,25 @@ export function Register({ close }: RegisterProps) {
         <div className={styles.formGroup}>
           <label htmlFor="areas">Interesse</label>
           <div className={styles.checkGroup}>
-              <span
-                onClick={() => handleCheckboxes('training', checkboxes.training)}
-                className={checkboxes.training ? styles.checkboxActive : ''}
-              >Formação</span>
-              <span
-                onClick={() => handleCheckboxes('consulting', checkboxes.consulting)}
-                className={checkboxes.consulting ? styles.checkboxActive : ''}
-              >Consultoria</span>
-              <span
-                className={checkboxes.certification ? styles.checkboxActive : ''}
-                onClick={() => handleCheckboxes('certification', checkboxes.certification)}
-              >
-                Certificação
-              </span>
+            <span
+              onClick={() => handleCheckboxes('training', checkboxes.training)}
+              className={checkboxes.training ? styles.checkboxActive : ''}
+            >Formação</span>
+            <span
+              onClick={() => handleCheckboxes('consulting', checkboxes.consulting)}
+              className={checkboxes.consulting ? styles.checkboxActive : ''}
+            >Consultoria</span>
+            <span
+              className={checkboxes.certification ? styles.checkboxActive : ''}
+              onClick={() => handleCheckboxes('certification', checkboxes.certification)}
+            >
+              Certificação
+            </span>
           </div>
         </div>
         <div className={styles.formGroup}>
           <div className={styles.term}>
-            <input type="checkbox" id='agree' checked={agree} onChange={(_) => setAgree(!agree)}  />
+            <input type="checkbox" id='agree' checked={agree} onChange={(_) => setAgree(!agree)} />
             <div className={styles.termBox}>
               <label htmlFor="agree">Eu concordo com a  <a target="_blank" href="/assets/Plexidata_Politica_de_Privacidade.pdf">política de privacidade</a> da Plexidata</label>
             </div>
