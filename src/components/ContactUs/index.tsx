@@ -45,6 +45,8 @@ export function ContactUs() {
         progress: undefined,
       })
 
+      setEmail('')
+
     } catch (error) {
       toast.error("Ocorreu um erro contacte a Plexidata", {
         position: "top-right",
