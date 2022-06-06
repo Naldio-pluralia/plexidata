@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation, Pagination } from "swiper";
-import Image from "next/image";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,7 +7,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/a11y';
 
 import styles from './slide.module.scss'
-import ReactPlayer from "react-player";
 import Script from "next/script";
 
 
@@ -57,7 +55,7 @@ export function Slide() {
               <p>Na implementação de sistemas capazes de minimizar ataques sem precedentes</p>
             </div>
             <div className={styles.slide1}>
-              <Image src="/assets/maintenance.svg" alt="Slide 2" />
+              <img src="/assets/maintenance.svg" alt="Slide 2" />
             </div>
           </div>
         </SwiperSlide>
@@ -70,7 +68,7 @@ export function Slide() {
               <p>Melhorar o conhecimento, a formação e as práticas institucionais em matérias de transparência, integridade e privacidade</p>
             </div>
             <div className={styles.slide1}>
-              <Image src="/assets/print.svg" alt="Slide 3" />
+              <img src="/assets/print.svg" alt="Slide 3" />
             </div>
           </div>
         </SwiperSlide>
@@ -83,7 +81,7 @@ export function Slide() {
               <p>Na redução de dependência de terceiros na parametrização da infra-estrutura tecnológica</p>
             </div>
             <div className={styles.slide1}>
-              <Image src="/assets/maintenance.svg" alt="Slide 4" />
+              <img src="/assets/maintenance.svg" alt="Slide 4" />
             </div>
           </div>
         </SwiperSlide>

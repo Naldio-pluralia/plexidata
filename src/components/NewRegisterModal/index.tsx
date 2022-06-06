@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Modal from 'react-modal'
 import { Register } from "../Register";
 
@@ -17,7 +16,7 @@ export function NewRegisterModal({ isOpen, onRequestClose}: any) {
         onClick={onRequestClose}
         className="react-modal-close"
       >
-        <Image src="/assets/close.svg" alt="Fechar Modal" />
+        <img src="/assets/close.svg" alt="Fechar Modal" />
       </button>
 
       <Register close={onRequestClose} />

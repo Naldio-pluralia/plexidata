@@ -2,7 +2,6 @@ import { useModal } from '../../hooks/useModal'
 import { Link } from 'react-scroll'
 
 import styles from './header.module.scss'
-import Image from 'next/image'
 
 export function Header() {
   const { setIsOpen } = useModal()
@@ -10,7 +9,7 @@ export function Header() {
   return (
     <div className={styles.headerContainer} id="home">
       <div className='logo'>
-        <Image src="/assets/icon.png" alt="Plexidata" />
+        <img src="/assets/icon.png" alt="Plexidata" />
         <h1>Plexidata</h1>
       </div>
       <nav>
