@@ -35,7 +35,7 @@ export function ContactUs() {
 
       await setDoc(docRef, { email })
 
-      toast.success("Subscrição realizada com sucesso", {
+      toast.success("Obrigado por subscrever a nossa newsletter", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
