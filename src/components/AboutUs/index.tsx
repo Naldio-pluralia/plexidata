@@ -1,9 +1,10 @@
 import styles from './about.module.scss'
+import Image from 'next/image'
 
 export function AboutUs() {
   return (
     <div className={styles.aboutContainer} id="aboutUs">
-      <img src="/assets/triangle.png" alt="Triângulo Plexidata" />
+      <Image src="/assets/triangle.png" alt="Triângulo Plexidata" />
       <div className={styles.aboutContent}>
         <h3>Quem Somos</h3>
         <p>
