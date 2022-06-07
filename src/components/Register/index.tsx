@@ -44,10 +44,6 @@ export function Register({ close }: RegisterProps) {
     event.preventDefault();
     const captchaToken = recaptchaRef.current
 
-    console.log(captchaToken)
-
-    return
-
 
     if (!name || !email || !phoneNumber || !company || !charge) {
       toast.error("Todos os campos são obrigatórios", {
